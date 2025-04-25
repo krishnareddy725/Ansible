@@ -1,0 +1,6 @@
+- name: collecting server info
+  hosts: web
+  become: yes
+  tasks:
+    - name: getiing server info
+      ansible.builtin.setup:
