@@ -31,5 +31,9 @@ ANSIBLE Features
 
 8) AGENTLESS: No needs to install the agent for the servers.
 
+================================================================================================================
+
+yum install ansible -y --> To install ansible in Linux server
+
 
 
