@@ -1,0 +1,35 @@
+Ansible is a configaration managent tool and application deployment tool. ex: newlaptop
+
+ADVANTAGES OF Ansible
+=====================
+1) Shell script is not work on the all linux distributions, where ansible works.
+
+2) SCALABULITY:- difficulty to manage more number of linux servers.
+
+3) shell script error handling is very toughf, everytime we needs to call the validation function.
+
+4) shell script is not easy to understand, ansible is very easy to understand. everyone can easily understand.
+
+5) To connect external systems like aws,azure and github we have modules to connect.
+
+ANSIBLE Features
+================
+
+1) PLATFORM INDEPENDENCE: One ansible script that can work with all linux distributions.
+
+2) SCLABLE: ansible can manage at a time thousand of servers, but shell script will run at a time one server.
+
+3) IDEMPOTENCE: ansible is having the idempotence nature, that means if you run same program multiple times it wont get impact to server, where as shell script will create the damage.
+
+4) ERROR HANDLING: Ansible will take care of error handling automatically.
+
+5) READABLE AND MAINTANABLE: it is easy to understand the ansible program.
+
+6) VAULT: Sensitive information like password to store we use ansible vault feature.
+
+7) RICH MODULES: Ansible will have rich modules to connect with external systems like AWS, AZURE etc...
+
+8) AGENTLESS: No needs to install the agent for the servers.
+
+
+
