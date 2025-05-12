@@ -32,8 +32,49 @@ ANSIBLE Features
 8) AGENTLESS: No needs to install the agent for the servers.
 
 ================================================================================================================
+below command will work without installing the Ansible
+------------------------------------------------------
+sshpass -p "DevOps321" ssh centos@targetserver Ip adress --> ssh pass weused without prompt the password, after this command we are in target server(#exit is used to exit from the target server)
+
+Note: -p means password "DevOps321"
+
+Q) sshpass -p "DevOps321" ssh centos@ec2-54-172-160-189.compute-1.amazonaws.com -c "echo hello" > /tmp/krishna.txt --> this command will login to the node server and creating the "krishna.txt" file under /tmp folder.
 
 yum install ansible -y --> To install ansible in Linux server
+
+Ansible server works on the pushbased orchitecture no needs to install the agent in the target servers. Ansible server automatically connected with the target servers and push the configaration.
+
+cheff is works on the pull based architecture. for this we needs to install the agent in the all target servers so the agents every 30 minits communicates with the cheff server and pull the new updates.
+Disadvantages
+-------------
+1) Bandwith waste.
+2) Resource consumption like CPU and Memory
+3) Pull configaration have one advantage that is if any one is manually distrub the configaration in target servers that is going to correct the next configaration update automatically.
+
+ansible -i 172.31.22.197, all -e ansible_user=centos -e ansible_password=DevOps321 -m ping --> this command will get ping response from the target server.
+NOTE: i -- inventory
+      m -- module , In ansible everything we called module. here "-m ping" --> Means ping module.
+
+https://docs.ansible.com/ansible/latest/collections/index_module.html --> in this path we will see all modules.
+
+if any module name is starts with the "ansible.builtin" it is developed by ansible team officially. if any popular tool in market for that we have ansible modules. if any module is not avilable then we will use community modules.
+
+ansible -v -i 54.172.160.189, all -e ansible_user=centos -e ansible_password=DevOps321 --become -m yum -a "name=nginx state=present" ==> this command will connect to ansible node server and install the package.
+IMP NOTE:
+OUTPUT red color means ERRORS
+OUTPUT yellow color means changed
+OUTPUT Green color means SUCCESS.
+
+ ansible -v -i 54.172.160.189, all -e ansible_user=centos -e ansible_password=DevOps321 --become -m service -a "name=nginx state=started" ==> To start the nginx service in target machines
+
+To Keep all these modules in a file, that is nothing but a playbook.
+
+ansible use yaml language it means "yet another markup language"
+
+Q) what is a playbook?
+A) Playbook is a collection of modules 
+
+ansible-playbook -i inventory.ini -l web -e ansible_user=centos -e ansible_password=DevOps321 ping.yaml
 
 
 
